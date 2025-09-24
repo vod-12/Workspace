@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HELLOW WORLD Portfolio - Refined Header/Footer & Interactive Background</title>
+<style>
+  /* ===================== Reset Styles ===================== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+    background: linear-gradient(135deg, #0a1a2b, #1a314a, #6688aa); /* Dark HELLOW WORLD gradient */
+    color: #e0e7f1;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ===================== Improved Header & Footer ===================== */
+  header, footer {
+    position: fixed;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(15, 20, 40, 0.85), rgba(20, 30, 50, 0.55));
+    box-shadow:
+      0 2px 10px rgba(50, 70, 150, 0.7),
+      inset 0 -2px 8px rgba(180, 200, 255, 0.4);
+    color: #c7d4f9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    z-index: 10000;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    user-select: none;
+    backdrop-filter: blur(25px);
+    border-radius: 0 0 30px 30px;
+    border: 1.5px solid rgba(180, 200, 255, 0.3);
+  }
+  header {
+    top: 0;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+  }
+  footer {
+    bottom: 0;
+    border-radius: 30px 30px 0 0;
+    border-top: 1.5px solid rgba(180, 200, 255, 0.3);
+  }
+  /* Header and Footer Text with deeper glow */
+  header div, footer div {
+    text-shadow:
+      0 0 10px #a6befe,
+      0 0 25px #5678ffcc,
+      0 2px 6px rgba(100, 130, 255, 0.55);
+  }
+
+  /* ===================== Refined Glossy Buttons ===================== */
+  .glossy-button {
+    background: radial-gradient(circle at top left, #abc8ff, #3d59b8);
+    border-radius: 30px;
+    border: 2px solid #aacaff;
+    padding: 0.7rem 1.7rem;
+    color: #dbe6ff;
+    cursor: pointer;
+    box-shadow:
+      inset 0 4px 15px rgba(255, 255, 255, 0.8),
+      0 10px 30px rgba(70, 100, 255, 0.9);
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    font-weight: 800;
+    font-size: 1.15rem;
+    text-shadow: 0 0 12px #bed4ff;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.25s ease;
+    user-select: none;
+  }
+  .glossy-button:hover {
+    transform: scale(1.18) rotate(-2deg);
+    background: radial-gradient(circle at top left, #eaf1ff, #7a96d9);
+    color: #0b1b36;
+    box-shadow:
+      inset 0 8px 28px rgba(255, 255, 255, 0.99),
+      0 16px 48px rgba(80, 130, 255, 1);
+    text-shadow: none;
+  }
+  .glossy-button svg {
+    fill: currentColor;
+    width: 26px;
+    height: 26px;
+    filter: drop-shadow(0 0 7px #aacaffcc);
+    transition: filter 0.3s ease;
+    user-select: none;
+  }
+  .glossy-button:hover svg {
+    filter: drop-shadow(0 0 12px #224eb8dd);
+  }
+
+  /* ===================== Main Section ===================== */
+  main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 100px; /* space for header */
+    padding-bottom: 100px; /* space for footer */
+    user-select: none;
+    font-size: 5.2rem;
+    font-weight: 900;
+    color: #d2dcf5;
+    letter-spacing: 0.3em;
+    text-shadow:
+      0 0 8px #d2dcf5,
+      0 0 18px #aac2ff,
+      0 0 32px #7799fbaa;
+    z-index: 10;
+    white-space: nowrap;
+  }
+  #decrepted-text {
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    display: inline-block;
+  }
+
+  /* ===================== Interactive Background Canvas ===================== */
+  #interactive-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+</style>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
+
+</head>
+<body>
+<!-- ===================== Header ===================== -->
+<header>
+  <div>HELLOW WORLD PORTFOLIO</div>
+  <button class="glossy-button" onclick="location.href='#links'">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.9 12c0 1.71 1.39 3.1 3.1 3.1h2v-1.5h-2c-.88 0-1.6-.72-1.6-1.6s.72-1.6 1.6-1.6h4.3v3.2h1.5v-4.7c0-1.71-1.39-3.1-3.1-3.1H7c-1.66 0-3 1.34-3 3zm10 0c0 1.71 1.39 3.1 3.1 3.1h2v-1.5h-2c-.88 0-1.6-.72-1.6-1.6s.72-1.6 1.6-1.6h4.3v3.2h1.5v-4.7c0-1.71-1.39-3.1-3.1-3.1h-2c-1.66 0-3 1.34-3 3z"/></svg>
+    Links
+  </button>
+</header>
+
+<!-- ===================== Main Content ===================== -->
+<main>
+  <div id="decrepted-text">HELLOW WORLD</div>
+</main>
+
+<!-- ===================== Footer ===================== -->
+<footer>
+  <div>© 2025 HELLOW WORLD PORTFOLIO</div>
+  <button class="glossy-button" onclick="location.href='#links'">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.9 12c0 1.71 1.39 3.1 3.1 3.1h2v-1.5h-2c-.88 0-1.6-.72-1.6-1.6s.72-1.6 1.6-1.6h4.3v3.2h1.5v-4.7c0-1.71-1.39-3.1-3.1-3.1H7c-1.66 0-3 1.34-3 3zm10 0c0 1.71 1.39 3.1 3.1 3.1h2v-1.5h-2c-.88 0-1.6-.72-1.6-1.6s.72-1.6 1.6-1.6h4.3v3.2h1.5v-4.7c0-1.71-1.39-3.1-3.1-3.1h-2c-1.66 0-3 1.34-3 3z"/></svg>
+    Links
+  </button>
+</footer>
+
+<!-- ===================== Interactive Background Canvas ===================== -->
+<canvas id="interactive-bg"></canvas>
+
+<script>
+  // =================== Decrepted & Color Changing Animation ===================
+
+  const textElement = document.getElementById('decrepted-text');
+  const originalText = "HELLOW WORLD";
+  const chars = "!@#$%^&*()-_=+[]{}|;:,.<>?/~ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".split('');
+
+  // Returns a random character from chars array
+  function randomChar() {
+    return chars[Math.floor(Math.random() * chars.length)];
+  }
+
+  // Replace some letters with random chars (40% chance)
+  function glitchify(text) {
+    let result = "";
+    for(let i = 0; i < text.length; i++) {
+      if(Math.random() < 0.4) {
+        result += randomChar();
+      } else {
+        result += text[i];
+      }
+    }
+    return result;
+  }
+
+  // Play glitch flicker animation once at ~1.6 seconds total
+  async function playDecreptedAnimation() {
+    const glitchDuration = 1600; // 1.6 seconds
+    const glitchInterval = 70;
+    let elapsed = 0;
+
+    return new Promise(resolve => {
+      const glitchTimer = setInterval(() => {
+        textElement.textContent = glitchify(originalText);
+        elapsed += glitchInterval;
+        if(elapsed >= glitchDuration) {
+          clearInterval(glitchTimer);
+          textElement.textContent = originalText;
+          resolve();
+        }
+      }, glitchInterval);
+    });
+  }
+
+  // Smooth color shift cycling blue hues after glitch animation
+  function startColorShiftAnimation() {
+    let hue = 210; // start hue (icy blue)
+    const speed = 0.18; // degrees per frame
+    function animateColor() {
+      hue += speed;
+      if(hue >= 270) hue = 210;
+      const color = `hsl(${hue}, 85%, 80%)`;
+      const shadow1 = `0 0 12px hsl(${hue}, 100%, 90%)`;
+      const shadow2 = `0 0 28px hsl(${(hue + 25) % 360}, 90%, 75%)`;
+      const shadow3 = `0 0 48px hsl(${(hue + 50) % 360}, 80%, 65%)`;
+
+      textElement.style.color = color;
+      textElement.style.textShadow = `${shadow1}, ${shadow2}, ${shadow3}`;
+
+      requestAnimationFrame(animateColor);
+    }
+    animateColor();
+  }
+
+  // Run on page load
+  window.addEventListener('load', async () => {
+    await playDecreptedAnimation();
+    startColorShiftAnimation();
+  });
+
+  // =================== Interactive Background (Shimmering Snowflakes) ===================
+
+  const canvas = document.getElementById('interactive-bg');
+  const ctx = canvas.getContext('2d');
+  let width, height;
+
+  // Mouse position for subtle interaction
+  let mouseX = null;
+  let mouseY = null;
+
+  // Snowflake class with shimmer animation scaling size and brightness
+  class Snowflake {
+    constructor() {
+      this.reset();
+    }
+    reset() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      this.baseSize = 1 + Math.random() * 3;
+      this.size = this.baseSize;
+      this.speed = 0.6 + Math.random() * 1.5;
+      this.angle = Math.random() * Math.PI * 2;
+      this.angularSpeed = 0.007 + Math.random() * 0.01;
+      this.opacity = 0.35 + Math.random() * 0.5;
+      this.shimmerPhase = Math.random() * Math.PI * 2;
+    }
+    update() {
+      this.y += this.speed;
+      this.shimmerPhase += this.angularSpeed;
+
+      // Shimmer effect scales size and opacity in a smooth sine wave
+      this.size = this.baseSize + Math.sin(this.shimmerPhase) * 0.8;
+      this.opacity = 0.3 + (Math.sin(this.shimmerPhase) * 0.3);
+
+      // Slight horizontal sway for gentle natural movement
+      this.x += Math.sin(this.shimmerPhase * 1.5) * 0.3;
+
+      // Mouse repulsion within 130px radius for subtle interaction
+      if(mouseX !== null && mouseY !== null){
+        const dx = this.x - mouseX;
+        const dy = this.y - mouseY;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if(dist < 130) {
+          const force = (130 - dist) / 130;
+          this.x += (dx / dist) * force * 1.2;
+          this.y += (dy / dist) * force * 1.2;
+        }
+      }
+
+      // Reset flake if it moves off bottom or sides
+      if(this.y > height + this.size) this.y = 0 - this.size;
+      if(this.x > width + this.size) this.x = 0 - this.size;
+      if(this.x < 0 - this.size) this.x = width + this.size;
+    }
+    draw() {
+      ctx.beginPath();
+      // Create radial gradient for soft shimmering glow
+      const gradient = ctx.createRadialGradient(this.x, this.y, this.size * 0.1, this.x, this.y, this.size);
+      gradient.addColorStop(0, `rgba(255, 255, 255, ${this.opacity})`);
+      gradient.addColorStop(1, `rgba(255, 255, 255, 0)`);
+      ctx.fillStyle = gradient;
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  let flakes = [];
+  const maxFlakes = 180;
+
+  // Initialize canvas size and flakes
+  function init() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    flakes = [];
+    for(let i=0; i < maxFlakes; i++) {
+      flakes.push(new Snowflake());
+    }
+  }
+
+  // Animate snowflakes
+  function animateSnow() {
+    ctx.clearRect(0, 0, width, height);
+    flakes.forEach(flake => {
+      flake.update();
+      flake.draw();
+    });
+    requestAnimationFrame(animateSnow);
+  }
+
+  // Update on resize
+  window.addEventListener('resize', () => {
+    init();
+  });
+
+  // Track mouse position
+  window.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+  window.addEventListener('mouseout', () => {
+    mouseX = null;
+    mouseY = null;
+  });
+
+  // Initialize and start animation
+  init();
+  animateSnow();
+</script>
+</body>
+</html>
